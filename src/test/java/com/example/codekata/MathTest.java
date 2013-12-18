@@ -24,5 +24,11 @@ public class MathTest {
 		int result = math.multiply(5,4);
 		assertEquals(20, result);
 	}
+	
+	@Test
+	public void testAddition() {
+		int result = math.add(4,4);
+		assertEquals(8, result);
+	}
 
 }

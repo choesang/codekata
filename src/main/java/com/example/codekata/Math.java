@@ -10,6 +10,10 @@ public class Math {
 		return i * j;
 	}
 	
+	public int add(int i, int j) {
+		return i + j;
+	}
+	
 	
 
 }
