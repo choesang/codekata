@@ -8,21 +8,14 @@ public class UniqueSubStrings {
 	HashSet<String> hashSet = new HashSet<String>();
 	
 	public Set<String> permutate(String text) {
+		int lastIndex = text.length() - 1;
 		
-		char[] sliced = text.toCharArray();
-		
-//		int numberOfMaxPermutation = calculateMaxPermutation(text.length());
-//		System.out.println(numberOfMaxPermutation);
-		
-//		for (int i=0; i< sliced.length; i++) {
-//			hashSet.add(text.subSequence(0, i).toString());
-//		}
-//		
-//		for(int i=text.length(); i<=0; i--) {
-//			hashSet.add(text.subSequence(0, i).toString());
-//		}
-		
-		
+		for (int i=0; i<=lastIndex; i++) {
+			for(int j=i+1; j<=lastIndex+1; j++) {
+				String substring = text.substring(i, j);
+				hashSet.add(substring);
+			}
+		}
 		
 		Iterator<String> iterator = hashSet.iterator();
 		while (iterator.hasNext()) {
@@ -32,14 +25,5 @@ public class UniqueSubStrings {
 		return hashSet;
 	}
 
-	private int calculateMaxPermutation(int length) {
-		
-		int result = 0;
-		while (length > 0 ) {
-			result += length * (length - 1);
-			length--;
-		} 
-		return result;
-	}
 	
 }
