@@ -26,7 +26,7 @@ public class MathTest {
 	}
 	
 	@Test
-	public void testAddition() {
+	public void testAdd() {
 		int result = math.add(4,4);
 		assertEquals(8, result);
 	}
