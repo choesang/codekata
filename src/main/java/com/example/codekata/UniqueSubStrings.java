@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class UniqueSubStrings {
-	HashSet<String> hashSet = new HashSet<String>();
+	Set<String> hashSet = new HashSet<String>();
 	
 	public Set<String> permutate(String text) {
 		int lastIndex = text.length() - 1;
