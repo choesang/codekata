@@ -8,18 +8,14 @@ public class BotSavesPrincess {
 		Location princess = null, bot = null;
 		for (int i = 0; i < grid.length; i++) {
 			if (-1 != grid[i].indexOf("m")) {
-			//	System.out.println(i + "," + grid[i].indexOf("m"));
 				bot = new Location(grid[i].indexOf("m"), i);
 			}
 
 			if (-1 != grid[i].indexOf("p")) {
-			//	System.out.println(i + "," + grid[i].indexOf("p"));
 				princess = new Location(grid[i].indexOf("p"), i);
 			}
 		}
-		
 		computePathToPrincess(princess, bot); 
-
 	}
 
 	private static void computePathToPrincess(Location princess, Location bot) {

@@ -10,14 +10,14 @@ public class BotSavesPrincess2 {
 		int r1 = -1,c1 = -1;
 		
 		for (int i = 0; i < n; i++) {
-			if (-1 != grid[i].indexOf("p")) {
+			int positionOfPrincess = grid[i].indexOf("p");
+			if (-1 != positionOfPrincess) {
 				r1 = i;
-				c1 = grid[i].indexOf("p");
+				c1 = positionOfPrincess;
 			}
 		}
 		
 		String move = computeMove(r, c, r1, c1);
-//		System.out.println("r1 "+ r1 + " c1 " + c1) ;
 		System.out.println(move);
 		
 	}
@@ -33,14 +33,12 @@ public class BotSavesPrincess2 {
 			} else {
 				return "DOWN";
 			}
-			
 		} else {
 			if (leftOrRight > 0) {
 				return "LEFT";
 			} else {
 				return "RIGHT";
 			}
-			
 		}
 	}
 
