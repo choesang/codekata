@@ -38,7 +38,7 @@ public class StockPricePredictor {
 	private static void printStocksToBuyAndSell(List<Stock> stockList) {
 		System.out.println(stockList.size());
 		for (Stock stock : stockList) {
-			System.out.println(stock.name + " " + stock.transactionType + " " + stock.numberOfStocksForTransaction);
+			System.out.println(stock.name + " " + stock.transactionType + " " + stock.numberOfStocksForTransaction + " " + stock.points);
 		}
 	}
 
@@ -51,7 +51,7 @@ public class StockPricePredictor {
 		System.out.println("money: " + money);
 		double valuePerStockPoint = computeValuePerStockPoint(money, stockList);
 		
-		printStocksToBuyAndSell(stockList);
+		//printStocksToBuyAndSell(stockList);
 		
 		System.out.println("valuePerStockPoint: " + valuePerStockPoint);
 		Iterator<Stock> iterator = stockList.iterator();
@@ -73,7 +73,7 @@ public class StockPricePredictor {
 				
 				int stocksToBuy = (int) (moneyForTheStock/currentPrice);
  				if (stocksToBuy == 0) {
- 					iterator.remove();
+ 					//iterator.remove();
  				} else {
  					stock.numberOfStocksForTransaction = stocksToBuy;
  					System.out.println("moneyForTheStock: " + moneyForTheStock);
@@ -86,7 +86,7 @@ public class StockPricePredictor {
 				stock.transactionType = "SELL";
 				stock.numberOfStocksForTransaction = stock.numberOfStocksOwned;
 			} else if (stock.numberOfStocksOwned == 0 && stock.points < 0) {
-				iterator.remove();
+				//iterator.remove();
 			}
 		}
 		
@@ -151,9 +151,9 @@ public class StockPricePredictor {
 		} else {
 			nominator = currentPrice-average;
 		}
-		
+		System.out.println("nominator: " + nominator * sign);
 		double points = nominator * 100;
-		double divideBy = average * 33;
+		double divideBy = average;
 		return (int) (points/divideBy * sign);
 	}
 
