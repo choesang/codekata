@@ -1,7 +1,6 @@
 package com.example.codekata;
 
 import java.util.Scanner;
-import java.math.*;
 
 public class BotSavesPrincess2 {
 	
