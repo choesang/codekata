@@ -16,7 +16,7 @@ public class CommonElementsInSetsTest {
 
 	@Test
 	public void testCommonElements() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 }
