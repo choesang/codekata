@@ -10,9 +10,7 @@ public class PrimeNumbers {
 			if (prime) {
 				System.out.println(Long.toBinaryString(number) + "  ");
 			}
-			
 		}
-		
 	}
 
 	private static boolean isPrime(int n) {
