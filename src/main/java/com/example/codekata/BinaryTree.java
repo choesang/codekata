@@ -43,12 +43,15 @@ public class BinaryTree {
 		binaryTree.addNode(5, "n5");
 		binaryTree.addNode(6, "n6");
 		
-		System.out.println("InOrderTraversal: ");
-		inOrderTraverseTree(root);
-		System.out.println("PreOrderTraversal: ");
-		preOrderTraverseTree(root);
+//		System.out.println("InOrderTraversal: ");
+//		inOrderTraverseTree(root);
+//		System.out.println("PreOrderTraversal: ");
+//		preOrderTraverseTree(root);
 		System.out.println("postOrderTraverseTree: ");
 		postOrderTraverseTree(root);
+		
+		System.out.println("levelOrderTraverseTree: ");
+		levelOrderTraverseTree(root);
 		
 		System.out.println("find node 4: " + findNode(3));
 	}
@@ -76,6 +79,7 @@ public class BinaryTree {
 		return focusNode;
 	}
 
+//	left, parent, right
 	private static void inOrderTraverseTree(Node focusNode) {
 		if (focusNode != null) {
 			inOrderTraverseTree(focusNode.leftChild);
@@ -83,7 +87,8 @@ public class BinaryTree {
 			inOrderTraverseTree(focusNode.rightChild);
 		}
 	}
-	
+
+//	parent, left, right
 	private static void preOrderTraverseTree(Node focusNode) {
 		if (focusNode != null) {
 			System.out.println(focusNode);
@@ -91,12 +96,22 @@ public class BinaryTree {
 			preOrderTraverseTree(focusNode.rightChild);
 		}
 	}
-	
+
+//	children first and than parent
 	private static void postOrderTraverseTree(Node focusNode) {
 		if (focusNode != null) {
 			postOrderTraverseTree(focusNode.leftChild);
 			postOrderTraverseTree(focusNode.rightChild);
 			System.out.println(focusNode);
+		}
+	}
+	
+//	traverse level from top to bottom
+	private static void levelOrderTraverseTree(Node focusNode) {
+		if (focusNode != null) {
+			System.out.println(focusNode);
+			postOrderTraverseTree(focusNode.leftChild);
+			postOrderTraverseTree(focusNode.rightChild);
 		}
 	}
 

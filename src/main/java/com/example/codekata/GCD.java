@@ -29,7 +29,6 @@ public class GCD {
 		if (b == 0) {
 			return a;
 		} else {
-			System.out.println("recursion called..");
 			return euclid2(b, a % b);
 		}
 	}

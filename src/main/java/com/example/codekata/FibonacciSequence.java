@@ -9,7 +9,8 @@ public class FibonacciSequence {
 		Scanner scanner = new Scanner(System.in);
 //		for (int number = 0; number <= 1000; number++) {
 //			System.out.println(fibonacci(number));
-			fibonacciFast(1000);
+//			fibonacciFast(2);
+			System.out.println(fibonacci(1000));
 //		}
 	}
 
