@@ -5,8 +5,10 @@ package com.example.codekata;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -41,7 +43,7 @@ public class DFS {
 	private static void dfs(int r, int c, int pacman_r, int pacman_c,
 			int food_r, int food_c, String[] grid) {
 		
-		Node[] adjacencyLists = new Node[r*c];
+//		Node[] adjacencyLists = new Node[r*c];
 		Map<Position, Node> nodeMap = new HashMap<>();
 		
 		int currentNode = 0;
@@ -51,10 +53,9 @@ public class DFS {
 				char charValue = currentRow.charAt(j);
 				if (charValue != '%') {
 					Node node = new Node(i, j, charValue);
-					adjacencyLists[currentNode] = node;
+//					adjacencyLists[currentNode] = node;
 					nodeMap.put(node.position, node);
 					initializeNodesNeighbours(node, nodeMap, r, c);
-					
 					++currentNode;
 					
 				}
@@ -64,11 +65,8 @@ public class DFS {
 		Node root = nodeMap.get(new Position(pacman_r, pacman_c));
 		Node food = nodeMap.get(new Position(food_r, food_c));
 		
-//		for (Node node : nodeMap.values()) {
-//			System.out.println(node);
-//		}
-		
 		findByDFS(root, food);
+		findByBFS(root, food);
 		
 	}
 
@@ -126,9 +124,26 @@ public class DFS {
 		
 		System.out.println(stack);
 		System.out.println(stack.size());
-		
 	}
-
+	
+	private static void findByBFS(Node root, Node food) {
+		Queue queue = new LinkedList<>();
+		queue.add(root);
+		root.isVisited = true;
+		while ( !queue.isEmpty() ) {
+			Node node = (Node) queue.remove();
+			Node child = null;
+			
+			while ( (child = node.getNextUnvisitedNeighbour()) != null ) {
+				System.out.println(child);
+				child.isVisited = true;
+				queue.add(child);
+				if (child.value == '.') {
+					break;
+				}
+			}
+		}
+	}
 }
 
 class Node {
