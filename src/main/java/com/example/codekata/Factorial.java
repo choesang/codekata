@@ -19,12 +19,14 @@ public class Factorial {
 
 //		4 3 2 1
 	public int factorial(int n) {
-		while (n >= 1) {
-			n = n * factorial(n - 1);
+		System.out.println(n);
+
+		if (n == 1) {
+			return 1;
+		} else{
+			return  n * factorial(n - 1);
 		}
 		
-		System.out.println(n);
-		return n;
 	}
 
 }

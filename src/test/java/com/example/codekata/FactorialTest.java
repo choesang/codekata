@@ -3,6 +3,8 @@
  */
 package com.example.codekata;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 /**
@@ -13,8 +15,8 @@ public class FactorialTest {
 	
 	@Test
 	public void testFactorial() {
-//		Factorial factorial = new Factorial();
-//		assertEquals(6, factorial.factorial(3));
+		Factorial fac = new Factorial();
+		assertEquals(6, fac.factorial(3));
 	}
 
 }
