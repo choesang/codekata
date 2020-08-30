@@ -21,6 +21,11 @@ public class ActiveTradersTest {
     }
 
     @Test
+    public void try_test() {
+        System.out.println(1<<3);
+    }
+
+    @Test
     public void compute_active_traders_above_5_percentage() {
 
         Assert.assertEquals(List.of("Beta", "Zeta"), activeTraders.mostActive(Arrays.asList("Alpha",
