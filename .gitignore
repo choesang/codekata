@@ -1,2 +1,16 @@
-/target
+target
+*.iml
+*.ipr
+*.iws
+/classes/
++.settings
++.classpath
++.project
+.gitshots
+*.log
+*.class
+*~
+.DS_Store
+data_dev
 .idea/*
+!/.idea/codeStyles/Project.xml
