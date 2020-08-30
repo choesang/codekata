@@ -31,7 +31,7 @@ public class FindCommonValuesInSet {
 		int L = A.length;
 		int K = B.length;
 
-		List<Integer> intersectionArr = new ArrayList<Integer>();
+		List<Integer> intersectionArr = new ArrayList<>();
 		int i = L - 1;
 		int j = K - 1;
 

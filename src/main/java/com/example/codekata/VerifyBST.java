@@ -8,19 +8,27 @@ package com.example.codekata;
 public class VerifyBST {
 
 //	recursively loop through the tree and check left < parent and right > parent 
-	public boolean isBST(Tree t, int small, int large) {
-		if (t == null) {
+	public boolean isBST(Tree node, Tree leftNode, Tree rightNode) {
+		if (leftNode == null && rightNode == null) {
 			return true;
 		}
 
-		if (t.value > small && t.value < large) {
-			return isBST(t.left, small, t.value) && isBST(t.right, t.value, large);
+		if (isGreaterThan(node, leftNode) && isLessThan(node, rightNode)) {
+			return isBST(node.left, leftNode.left, leftNode.right) && isBST(node.right, rightNode.left, rightNode.right);
 		}
-
 		return false;
 	}
 
+	public boolean isGreaterThan(Tree node, Tree left) {
+		return left == null || node.value > left.value;
+	}
+
+	public boolean isLessThan(Tree node, Tree right) {
+		return right == null || node.value < right.value;
+	}
 }
+
+
 
 class Tree {
 	public int value;

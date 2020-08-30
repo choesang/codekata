@@ -6,7 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class VerifyBSTTest {
+
 	Tree tree;
+	VerifyBST verifyBST;
+
 	@Before
 	public void init() {
 		//		4
@@ -19,12 +22,19 @@ public class VerifyBSTTest {
 		tree.left.right = new Tree(3);
 		tree.right.left = new Tree(5);
 		tree.right.right = new Tree(7);
+
+		verifyBST = new VerifyBST();
 	}
 
 	@Test
-	public void test() {
-		VerifyBST verifyBST = new VerifyBST();
-		assertTrue(verifyBST.isBST(tree, Integer.MAX_VALUE, Integer.MAX_VALUE));
+	public void is_binary_search_tree() {
+		assertTrue(verifyBST.isBST(tree, tree.left, tree.right));
+	}
+
+	@Test
+	public void is_not_binary_search_tree() {
+		tree.left.left = new Tree(100);
+		assertFalse(verifyBST.isBST(tree, tree.left, tree.right));
 	}
 
 }

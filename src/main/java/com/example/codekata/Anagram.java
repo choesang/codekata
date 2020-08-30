@@ -32,7 +32,7 @@ public class Anagram {
 		String b;
 		int mid = words.length() / 2;
 		a = words.substring(0, mid);
-		b = words.substring(mid, words.length());
+		b = words.substring(mid);
 		System.out.println(a.length() + " "+ b.length());
 		
 		if ( Math.abs(a.length()) - Math.abs(b.length()) <= 1) {
